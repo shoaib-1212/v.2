@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Aamna ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.3em;
+      padding: 0 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yesBtn {
+      background: white;
+      color: #ff4d6d;
+    }
+
+    #noBtn {
+      background: black;
+      color: white;
+      position: absolute;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    #loveLetter {
+      display: none;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Shoaib ❤️ Aamna🤍, madam ji🎀, malkin🥰, drakula 🧛</h1>
+  <p>Hey Aamna... gussa kis liye ho madam ji 😅</p>
+
+  <button onclick="startLove()">gussa kis liye ho madam ji</button>
+  <p> click here ☝️ 💖</p>
+
+  <div id="proposal" style="display:none;">
+    <h2>Do you pasand me? 🥺</h2>
+    <button id="yesBtn" onclick="yesClicked()">Yes ❤️</button>
+    <button id="noBtn" onmouseover="moveNo()">No 😝</button>
+  </div>
+
+  <div id="loveLetter">
+    <h2>For You 💌</h2>
+    <p>
+      Aamna 🤍,
+      <br><br>
+      I don’t know how to say this perfectly... but you mean a lot to me.
+      Every time I see you, my day becomes better.
+      Your smile, your attitude, even your gussa 😅 — everything feels special.
+      <br><br>
+      Madam ji 🎀, malkin 🥰, even drakula 🧛 — jo bhi ho... meri ho bas 😌
+      <br><br>
+      I really, really like you ❤️
+    </p>
+  </div>
+
+  <script>
+    function startLove() {
+      document.getElementById("proposal").style.display = "block";
+    }
+
+    function yesClicked() {
+      document.getElementById("loveLetter").style.display = "block";
+      alert("I knew it 🥰❤️");
+    }
+
+    function moveNo() {
+      const btn = document.getElementById("noBtn");
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+
+    function startLove() {
+      document.getElementById("proposal").style.display = "block";
+      music.play();
+    }
+  </script>
+
+</body>
+</html>
